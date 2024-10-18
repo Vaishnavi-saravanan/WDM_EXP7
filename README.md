@@ -1,5 +1,5 @@
 ### EX7 Implementation of Link Analysis using HITS Algorithm
-### DATE: 
+### DATE:12.10.2024
 ### AIM: To implement Link Analysis using HITS Algorithm in Python.
 ### Description:
 <div align = "justify">
@@ -90,8 +90,40 @@ plt.xticks(nodes, [f'Node {i}' for i in nodes])
 plt.legend()
 plt.tight_layout()
 plt.show()
+
+    
+ 
+# Example adjacency matrix (replace this with your own data)
+# For simplicity, using a random adjacency matrix
+adj_matrix = np.array([
+    [0, 1, 1],
+    [1, 0, 0],
+    [1, 0, 0]
+])
+
+# Run HITS algorithm
+authority, hub = hits_algorithm(adj_matrix)
+for i in range(len(authority)):
+    print(f"Node {i}: Authority Score = {authority[i]:.4f}, Hub Score = {hub[i]:.4f}")
+
+# bar chart of authority vs hub scores
+
+nodes = np.arange(len(authority))
+bar_width = 0.35
+plt.figure(figsize=(8, 6))
+plt.bar(nodes - bar_width/2, authority, bar_width, label='Authority', color='blue')
+plt.bar(nodes + bar_width/2, hub, bar_width, label='Hub', color='green')
+plt.xlabel('Node')
+plt.ylabel('Scores')
+plt.title('Authority and Hub Scores for Each Node')
+plt.xticks(nodes, [f'Node {i}' for i in nodes])
+plt.legend()
+plt.tight_layout()
+plt.show()
 ```
 
 ### Output:
+![Screenshot 2024-10-18 184104](https://github.com/user-attachments/assets/eeda660a-6134-4b65-b975-7b2f8b8aca7e)
 
 ### Result:
+Thus Link Analysis using HITS Algorithm in Python is successfully implemented.
