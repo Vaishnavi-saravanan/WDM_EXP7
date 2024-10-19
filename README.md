@@ -74,7 +74,7 @@ adj_matrix = np.array([
 # Run HITS algorithm
 authority, hub = hits_algorithm(adj_matrix)
 for i in range(len(authority)):
-    print(f"Node {i}: Authority Score = {authority[i]:.4f}, Hub Score = {hub[i]:.4f}")
+    print(f"Node {i+1}: Authority Score = {authority[i]:.4f}, Hub Score = {hub[i]:.4f}")
     
 i=0
 j=1
@@ -93,6 +93,9 @@ for i in range(len(authority)):
 print("Ranking based on Hub Scores:")
 for i in range(len(authority)):
     print("Rank" ,i+1,hub[i])
+print("Ranking based on Authority Scores:")
+for i in range(len(authority)):
+    print("Rank",i+1,hub[i])
 # bar chart of authority vs hub scores
 
 nodes = np.arange(len(authority))
@@ -111,7 +114,7 @@ plt.show()
 ```
 
 ### Output:
-![image](https://github.com/user-attachments/assets/abde6fcf-8c75-4bf1-8461-0e26230c99de)
+![image](https://github.com/user-attachments/assets/b2b7a81e-1856-49a3-8ecb-bbbecdae5dd9)
 
 ### Result:
 Thus Link Analysis using HITS Algorithm in Python is successfully implemented.
